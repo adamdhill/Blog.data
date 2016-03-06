@@ -12,4 +12,7 @@
 #pie(uniques, labels = Label, main = "Percent share of total interactions on FB in February")
 
 library(httr)
-r <- GET("https://raw.githubusercontent.com/adamdhill/Blog.data/master/03.05.2016.csv")
+url <- "https://raw.githubusercontent.com/adamdhill/Blog.data/master/03.05.2016.csv"
+request <- GET(url)
+data <- textConnection(request)
+read.table(data)
